@@ -39,10 +39,32 @@ public class MainCode {
 		int[] array = new int[5];
 		int min = -100;
         int max = 100;
+        
+        System.out.print ("Масив:");
 		for (int i = 0; i < array.length; i++) {
 		    array[i] = random.nextInt(max + 1 - min) + min;
-		    System.out.println(array[i]);
+		    System.out.print(" " + array[i]);
 		}
-		System.out.println(plusNum(array));
+		
+		System.out.println("\nномер мінімального за модулем елемента масиву: "+minNum(array));
+		int t = 0;
+		for (int j = 0; j < array.length; j++) 
+		{
+			if(array[j]>0)
+				t+=1;
+		}
+		if(t>1)
+		{
+			System.out.println("сума елементів масиву, розташованих між першим й останнім додатними елементами: "+plusNum(array));
+		}
+		else if(t==1) 
+		{
+			System.out.println("В масиві всього один додатній елемент");
+		}
+		else 
+		{
+			System.out.println("в масиві немає додатніх елементів");
+		}
 	}
 }
+
